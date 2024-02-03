@@ -1,14 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:kriiti/Screens/Splash.dart';
 
-import 'MessageScreen.dart';
+import 'DmMessageScreen.dart';
 
-class ChatScreen extends StatefulWidget {
+class DmChatScreen extends StatefulWidget {
   @override
-  _ChatScreen createState() => _ChatScreen();
+  _DmChatScreen createState() => _DmChatScreen();
 }
 
-class _ChatScreen extends State<ChatScreen> {
+class _DmChatScreen extends State<DmChatScreen> {
   final Stream<QuerySnapshot> _chatStream =
       FirebaseFirestore.instance.collection('DmConversations').snapshots();
 
@@ -27,7 +28,7 @@ class _ChatScreen extends State<ChatScreen> {
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Text("Loading");
+            return SplashScreen();
           }
 
           return ListView(
@@ -51,7 +52,7 @@ class _ChatScreen extends State<ChatScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MessageScreen(groupId: GroupId,user: data['user2'],),
+                        builder: (context) => DmMessageScreen(groupId: GroupId,user: data['user2'],),
                       ),
                     );
                   },
@@ -64,7 +65,7 @@ class _ChatScreen extends State<ChatScreen> {
                     ),
                     child: Row(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           child: Icon(Icons.person), // You can use any icon you prefer
                         ),
                         SizedBox(width: 10.0),
@@ -92,7 +93,7 @@ class _ChatScreen extends State<ChatScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MessageScreen(groupId: GroupId,user: data['user1'],),
+                        builder: (context) => DmMessageScreen(groupId: GroupId,user: data['user1'],),
                       ),
                     );
                   },

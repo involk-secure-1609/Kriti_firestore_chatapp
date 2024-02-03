@@ -48,6 +48,7 @@ dependencies:
   uuid: ^4.3.3
   mime: ^1.0.5
   open_filex: ^4.3.4
+  flutter_spinkit: ^5.2.0
 
 dev_dependencies:
   flutter_test:

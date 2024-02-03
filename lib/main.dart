@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:kriiti/Screens/ChatScreen.dart';
-import 'package:kriiti/Screens/MessageScreen.dart';
+import 'package:kriiti/Screens/DmChatScreen.dart';
+import 'package:kriiti/Screens/DmMessageScreen.dart';
 import 'firebase_options.dart';
 
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: ChatScreen(),
+      home: DmChatScreen(),
     );
   }
 }

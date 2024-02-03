@@ -1,21 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:kriiti/Screens/Splash.dart';
 
 import '../Models/message.dart';
 import '../providers/database_provider.dart';
 
-class MessageScreen extends StatefulWidget {
+class DmMessageScreen extends StatefulWidget {
   final String groupId;
   final String user;
 
-  MessageScreen({required this.groupId, required this.user});
+  DmMessageScreen({required this.groupId, required this.user});
 
   @override
-  _MessageScreen createState() => _MessageScreen();
+  _DmMessageScreen createState() => _DmMessageScreen();
 }
 
-class _MessageScreen extends State<MessageScreen> {
+class _DmMessageScreen extends State<DmMessageScreen> {
 
   late final Stream<QuerySnapshot> _messageStream;
   late final String oppUser;
@@ -63,7 +64,7 @@ class _MessageScreen extends State<MessageScreen> {
                     return Text('Something went wrong');
                   }
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Text("Loading");
+                    return SplashScreen();
                   }
                   return ListView(
                     reverse: false,
