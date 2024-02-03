@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1037178946224",
+    "project_id": "kriti-backend-2",
+    "storage_bucket": "kriti-backend-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037178946224:android:b8e94c72fa3c6b69d2b175",
+        "android_client_info": {
+          "package_name": "com.example.kriiti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ttBSlCEDROq39Ama3rYHTA4L6-GA4cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
